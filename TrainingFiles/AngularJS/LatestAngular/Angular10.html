@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+
+<div ng-app ng-intit="qty=1;cost=2">
+
+<label for="Quantity">Quantity</label>
+<input type="text" name="Quantity" id="Quantity" ng-model="qty"><br>
+
+<label for="cost">Quantity</label>
+<input type="text" name="cost" id="cost" ng-model="cost"><br>
+
+<div>Total:
+<span>{{qty*cost | currency}}</span>
+</div>
+
+</div>
+
+
+ 
+
+
+</body>
+</html>

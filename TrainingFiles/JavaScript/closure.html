@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Closures For Private Variables</title>
+    <script type="text/javascript">
+        // I am a class constructor.
+        function Girl( name, weight ){
+            // Store the private variables.
+            var name = name;
+            var weight = weight;
+            // Define the girl instance (our Girl constructor is
+            // more of a factory than it is a constructor).
+            var girl = {
+                // I return the name.
+                getName: function(){
+                    return( name );
+                },
+                // I return the weight - I swear!
+                getWeight: function(){
+                    return( weight - 10 );
+                }
+            };
+            // Return the girl instance.
+            return( girl );
+        }
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+        // Create a new girl instance.
+        var katie = new Girl( "Katie", 125 );
+        // Check to see if the weight property exists in a public
+        // portion of the girl instance.
+        console.log(
+            "Weight in?",
+            ("weight" in katie)
+        );
+        // Get the weight using the accessors.
+        console.log(
+            "Weight is:",
+            katie.getWeight()
+        );
+    </script>
+</head>
+<body>
+    <!-- Intentionally left blank. -->
+</body>
+</html>

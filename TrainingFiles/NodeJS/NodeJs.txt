@@ -1,0 +1,2 @@
+JavaScript based : works as same as browser JS engine work with extra stuffs added on top
+

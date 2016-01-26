@@ -1,0 +1,82 @@
+
+
+The DOM tree is tightly interlinked:
+
+up
+parentNode
+down
+children/childNodes, firstChild, lastChild
+left/right
+previousSibling/nextSibling
+Browser guarantees that the links are always correct. All of them are read-only.
+
+If there is no such element (child, parent, neighbour etc), the value is null.
+
+nodeType
+Type of the node. Most notable types are 1 for elements and 3 for text nodes. Read-only.
+nodeName/tagName
+Tag name in upper case. The nodeName also has special values for non-element nodes. Read-only.
+innerHTML
+Content of an element node. Writeable.
+nodeValue
+Content of a text node. Writeable.
+DOM Nodes also have other properties, depending on the tag. For example, an INPUT element has value and checked properties, A has href etc.
+
+
+
+Attributes
+
+DOM nodes provide access to HTML attributes using the following standard methods:
+
+elem.hasAttribute(name) - checks if the attribute exists
+elem.getAttribute(name) - gets an attribute value
+elem.setAttribute(name, value) - sets an attribute
+elem.removeAttribute(name) - removes an attribute
+
+
+
+There are 5 main ways of querying DOM:
+
+getElementById
+getElementsByTagName
+getElementsByName
+getElementsByClassName (except IE<9)
+querySelector (except IE<8 and IE8 in compat mode)
+All of them can search inside any other element. All of them excepts the last one return live collections.
+
+XPath is kind-of supported in most browsers, but very rarely used.
+
+The document.write (or writeln) allows to output a text directly into HTML. It deletes (reopens) the whole document if called after page loading.
+
+The advantages of document.write are:
+
+It can append arbitrary, even partial, incomplete and malformed HTML into document.
+It is very fast, because the browser doesn’t have to modify an existing DOM structure.
+
+
+TABLE
+Direct access to rows and cells.
+FORM
+Forms are in document.forms[name/index]. Elements are in form.elements[name/index].
+SELECT
+Direct access to options by select.options[name/index]. The index of the selected option: select.selectedIndex.
+These methods are very convenient compared to general DOM searching machinery.
+
+
+
+
+
+
+
+
+Creation methods:
+
+document.createElement(tag) - creates a new element node.
+document.createTextNode(value) - creates a new text node with given value
+elem.cloneNode(deep) - clones the element
+Inserting and removing methods are called from parent node. All of them return elem:
+
+parent.appendChild(elem)
+parent.insertBefore(elem, nextSibling)
+parent.removeChild(elem)
+parent.replaceChild(elem, currentElem)

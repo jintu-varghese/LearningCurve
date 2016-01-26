@@ -1,0 +1,23 @@
+var arr=[100,200,300,400,28];
+var total=0;
+var average=0;
+var a=arr.push('22');
+console.log(a);
+console.log(arr);
+var b=arr.pop();
+console.log(b);
+console.log(arr);
+var c=arr.unshift(0);
+console.log(c);
+console.log(arr);
+var d=arr.shift(0);
+console.log(d);
+console.log(arr);
+arr.forEach(function(g){
+console.log(g);
+total+=g;
+});
+console.log(arr.length);
+average=(total/arr.length) ;//+ '.' + (total%arr.length);
+console.log(total);
+console.log(average);

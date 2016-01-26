@@ -1,0 +1,41 @@
+<head>
+    <title>Comments</title>
+    <link rel="stylesheet" href="css/bootstrap.css"></link>
+    <link rel="stylesheet" href="css/bootstrap.responsive.css"></link>
+    <link rel="stylesheet" href="css/prettify.css"></link>
+    <link rel="stylesheet" href="css/docs.css"></link>
+    <link rel="stylesheet" href="css/jquery.comment.min.css"></link>
+    
+    
+    
+</head>
+<body>
+<script type="text/javascript" src="js/prettify.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.comment.js"></script>
+
+
+<script type="text/javascript">
+		$(document).ready(function () {
+        $(document).ready(function () { window.prettyPrint && prettyPrint(); });
+
+        $("#commentsContainer").comments({
+            getCommentsUrl: "/json/comments",
+            displayAvatar:false,
+            limit: 10,
+				auto_refresh: false,
+				refresh: 10000,
+				transition: 'slideToggle'
+        });
+    });
+			
+</script>
+
+<div id="page_wrapper">
+
+<div id="commentsContainer">
+
+</div>
+
+</div>
+</body>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>React-Prop</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div id="app"></div>
+        
+    </body>
+    <script type="text/javascript" src="http://fb.me/react-0.11.1.js"></script>
+    <script type="text/javascript" src="http://fb.me/JSXTransformer-0.11.1.js"></script>
+    
+    
+    
+     <script type="text/jsx">
+        /**@jsx React.DOM*/
+        
+        var MessageBox = React.createClass({
+            deleteMe: function(){
+             console.log('Deleting');
+            },
+            getInitialState: function(){
+            return {
+               isVisible: true,
+               messages: [
+                  'First Message',
+                  'Second Message'
+               ]
+            };
+            },
+            render: function() {
+            var inlineStyles ={
+            display : this.state.isVisible ? 'block' : 'none'
+            };
+            var MsgForSubH4='Nice';
+            var messages = this.state.messages.map(function(item){
+            return <SubH4Message message={item} onDelete={this.deleteMe}/>
+            });
+            return (
+            <div className="container jumbotron" style={inlineStyles}>
+            <h2>{this.props.titleMessage}</h2>
+            
+            <SubMessage />
+            <SubH3Message />
+            <SubH4Message message={MsgForSubH4}/>
+            {messages}
+            </div>
+            );
+            }
+        });
+        
+        var SubMessage= React.createClass({
+        getInitialState: function(){
+            return {
+               isVisible: true,
+               subTitle: 'Nice To See You'
+            }
+            },
+         render :function(){
+         var subMessageStyles ={
+            display : this.state.isVisible ? 'block' : 'none'
+            };
+         return (
+         <div style={subMessageStyles}>{this.state.subTitle}</div>
+         );
+         }
+        });
+        
+        
+         var SubH3Message= React.createClass({
+        getDefaultProps: function(){
+            return {
+               subTitle: 'Nice To See You Again'
+            }
+            },
+         render :function(){
+        
+         return (
+         <div >{this.props.subTitle}</div>
+         );
+         }
+        });
+        
+        var SubH4Message= React.createClass({
+        handleDelete: function(e){
+          console.log(this.props);
+        },
+        propTypes: {
+           message:React.PropTypes.string.isRequired
+        },
+        getDefaultProps: function(){
+            return {
+               message: 'Nice To See You Again & Again'
+            }
+            },
+         render :function(){
+        
+         return (
+         <div >{this.props.message}</div>
+         <button onClick={this.handleDelete} className="btn btn-danger">Delete</button>
+         );
+         }
+        });
+        
+        
+        var message= 'Yes!!';
+        
+       var reactComponent= React.renderComponent(
+        <MessageBox titleMessage={message}/>,
+        document.getElementById('app')
+        );
+        
+         
+        
+    </script>
+    
+    
+    
+</html>

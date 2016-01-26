@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Image-Slider</title>
+<style type=text/css>
+
+#hero
+{
+width:667px;
+height:500px;
+margin:50px auto;
+position:relative;
+overflow:hidden;
+
+}
+#slider
+{
+position: absolute;
+width:667px;
+height:500px;
+overflow:hidden;
+
+}
+
+#next
+{
+text-align:center;
+width:50px;
+height:50px;
+position:absolute;
+z-index:99;
+background-color:rgba(183,0,3,.5);
+color:white;
+line-height:50px;
+cursor:pointer;
+top:225px;
+right:0;
+opacity:.0;
+
+}
+
+
+#prev
+{
+text-align:center;
+width:50px;
+height:50px;
+position:absolute;
+z-index:99;
+background-color:rgba(183,0,3,.5);
+color:white;
+line-height:50px;
+cursor:pointer;
+top:225px;
+left:0;
+opacity:.0;
+
+}
+#hero:hover #next{
+opacity:1;
+transition: all .5s ease-out;
+}
+#hero:hover #prev{
+opacity:1;
+transition: all .5s ease-out;
+}
+
+
+
+
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.cycle.js"></script>
+<script type="text/javascript">
+$('#slider').cycle({ 
+   resizeContainer: false,
+  slideResize: false,
+    fx:      'turnDown', 
+    next:   '#next',
+    prev:   '#prev', 
+    timeout:  0
+    
+});
+
+
+</script>
+
+
+</head>
+
+<body>
+<div id="hero">
+
+<div id="next">&rang;</div><!--next -->
+<div id="prev">&lang;</div><!--prev -->
+<div id="slider">
+<img src="image1.jpg" >
+<img src="image2.jpg" >
+<img src="image3.jpg" >
+
+</div><!--slider -->
+
+</div><!--hero -->
+
+</body>
+
+</html>

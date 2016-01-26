@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+ <!--  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">-->
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    
+    <div class="container" ng-controller="mainController">
+    
+        <label>Search</label>
+        <input type="text" value="Doe" />
+        
+        <h3>Search Results</h3>
+        <div>
+            <!--<a href="#">
+                <h4>Doe,john</h4>
+                <p>3655 pruneridge Avenue</p>
+            </a>-->
+            <search-result person-object="person" person-name="{{ person.name }}" person-address="{{ person.address }}" greeting-function="greeting(aperson)" ng-repeat="person in people"></search-result>
+           <!-- <div search-result person-object="person" person-name="{{ person.name }}" person-address="{{ person.address }}" greeting-function="greeting(aperson)"></div>
+            <div class="search-result" person-object="person" person-name="{{ person.name }}" person-address="{{ person.address }}" greeting-function="greeting(aperson)"></div>-->
+            <!-- directive: search-result person-name="{{ person.name }}" person-address="{{ person.address }}" greeting-function="greeting(aperson)"-->
+        </div>
+        
+    </div>
+    
+    <!-- <div >
+        
+        <h1>Hello {{ name }}</h1>
+        
+        <form name="myForm">
+   <label>
+      Enter text:
+    <input type="text" ng-model="field" name="myField" required minlength="5" />
+   </label>
+   <div ng-messages="myForm.myField.$error" role="alert">
+   <div ng-message="required">You did not enter a field</div>
+     <div ng-message="minlength, maxlength">
+      Your email must be between 5 and 100 characters long
+     </div>
+   </div>
+ </form>
+        
+        <div>
+        <label>What is your twitter handle?</label>
+            <input type="text" ng-model="handle"/>
+        </div>
+        <hr />
+        <div>twitter.com/{{ handle }}</div>
+        <div>twitter.com/{{ formattedUpperhandle() }}</div>
+        </div>
+    
+        Choose:
+           <a href="#/Book/Moby">Moby</a> |
+           <a href="#/Book/Moby/ch/1">Moby: Ch1</a> |
+           <a href="#/Book/Gatsby">Gatsby</a> |
+           <a href="#/Book/Gatsby/ch/4?key=value">Gatsby: Ch4</a> |
+           <a href="#/Book/Scarlet">Scarlet Letter</a><br/>
+    
+        
+       <div ng-view></div>
+        
+    <hr />
+     
+            <pre>$location.path() = {{$location.path()}}</pre>
+           <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+           <pre>$route.current.params = {{$route.current.params}}</pre>
+           <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+           <pre>$routeParams = {{$routeParams}}</pre> 
+        
+        
+    </div>-->
+    
+    
+ <script src="//code.angularjs.org/1.4.8/angular.min.js"></script>
+ <script src="//code.angularjs.org/1.4.8/angular-messages.min.js"></script>
+ <script src="//code.angularjs.org/1.4.8/angular-resource.min.js"></script>
+ <script src="//code.angularjs.org/1.4.8/angular-route.min.js"></script>
+    
+ <!-- <script src="scripts.js"></script>--> 
+    
+    <script src="app.js"></script>
+</body>
+</html>

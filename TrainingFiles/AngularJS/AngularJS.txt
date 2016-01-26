@@ -1,0 +1,261 @@
+AngularJS extends HTML with ng-directives.
+
+The ng-app directive defines an AngularJS application.
+
+The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+
+The ng-bind directive binds application data to the HTML view. 
+
+The ng-init directive initialize AngularJS application variables.
+
+You can use data-ng-, instead of ng-, if you want to make your page HTML valid. 
+
+AngularJS expressions are written inside double braces: {{ expression }}.
+
+
+AngularJS expressions bind AngularJS data to HTML the same way as the ng-bind directive.
+
+AngularJS modules define AngularJS applications.
+
+AngularJS controllers control AngularJS applications. 
+
+The ng-app directive defines the application, the ng-controller directive defines the controller.
+
+AngularJS expressions are much like JavaScript expressions: They can contain literals, operators, and variables.
+
+ If you remove the ng-app directive, HTML will display the expression as it is, without solving it:
+
+AngularJS numbers are like JavaScript numbers:
+
+AngularJS strings are like JavaScript strings:
+
+AngularJS objects are like JavaScript objects:
+
+AngularJS arrays are like JavaScript arrays:
+
+AngularJS Expressions vs. JavaScript Expressions
+
+Like JavaScript expressions, AngularJS expressions can contain literals, operators, and variables.
+
+Unlike JavaScript expressions, AngularJS expressions can be written inside HTML.
+
+Unlike JavaScript expressions, AngularJS expressions do not support conditionals, loops, or exceptions.
+
+Unlike JavaScript expressions, AngularJS expressions support filters.
+
+The ng-repeat directive repeats an HTML element:
+
+AngularJS is perfect for database CRUD (Create Read Update Delete) applications.
+Just imagine if these objects were records from a database.
+
+The ng-app directive defines the root element of an AngularJS application.
+
+The ng-app directive will auto-bootstrap (automatically initialize) the application when a web page is loaded.
+
+The ng-init directive defines initial values for an AngularJS application.
+
+The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+
+The ng-model directive can also:
+
+    Provide type validation for application data (number, email, required).
+    Provide status for application data (invalid, dirty, touched, error).
+    Provide CSS classes for HTML elements.
+    Bind HTML elements to HTML forms.
+
+
+The ng-repeat directive clones HTML elements once for each item in a collection (in an array). 
+
+
+AngularJS will invoke the controller with a $scope object.
+
+In AngularJS, $scope is the application object (the owner of application variables and functions).
+
+
+
+AngularJS filters can be used to transform data:
+
+Filter 	      Description
+currency 	Format a number to a currency format.
+filter 	    Select a subset of items from an array.
+lowercase 	Format a string to lower case.
+orderBy 	Orders an array by an expression.
+uppercase 	Format a string to upper case.
+
+
+$http is an XMLHttpRequest object for requesting external data.
+
+$http.get() reads JSON data
+
+To display the table index, add a <td> with $index: 
+
+$even and $odd
+
+<table>
+<tr ng-repeat="x in names">
+<td ng-if="$odd" style="background-color:#f1f1f1">{{ x.Name }}</td>
+<td ng-if="$even">{{ x.Name }}</td>
+<td ng-if="$odd" style="background-color:#f1f1f1">{{ x.Country }}</td>
+<td ng-if="$even">{{ x.Country }}</td>
+</tr>
+</table>
+
+
+The ng-disabled directive binds AngularJS application data to the disabled attribute of HTML elements.
+
+The ng-show directive shows or hides an HTML element.
+
+The ng-hide directive hides or shows an HTML element.
+
+The ng-click directive defines an AngularJS click event.
+
+The novalidate attribute is new in HTML5. It disables any default browser validation.
+
+FORM Validations
+
+$dirty	The user has interacted with the field.
+$valid	The field content is valid.
+$invalid	The field content is invalid.
+$pristine	User has not interacted with the field yet.
+
+
+AngularJS Global API
+The AngularJS Global API is a set of global JavaScript functions for performing common tasks like:
+
+Comparing objects
+Iterating objects
+Converting data
+The Global API functions are accessed using the angular object.
+
+Below is a list of some common API functions:
+
+angular.lowercase()	Converts a string to lowercase
+angular.uppercase()	Converts a string to uppercase
+angular.isString()	Returns true if the reference is a string
+angular.isNumber()	Returns true if the reference is a number
+
+Bootstrap is a popular style sheet.
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+With AngularJS, you can include HTML content using the ng-include directive:
+
+
+<div class="container">
+  <div ng-include="'myUsers_List.htm'"></div>
+  <div ng-include="'myUsers_Form.htm'"></div>
+</div>
+
+AngularJS Directives
+
+ng-app	        Defines the root element of an application.	Directives
+ng-bind	        Binds the innerHTML of HTML elements to application data.	Introduction
+ng-click	    Defines the behavior when an element is clicked.	HTML Events
+ng-controller	Defines the controller object for an application.	Controllers
+ng-disabled	    Binds application data to the HTML disabled attribute.	HTML DOM
+ng-hide	        Hides or shows HTML elements.	HTML DOM
+ng-include	    Includes HTML in an application.	Includes
+ng-init	Defines initial values for an application.	Directives
+ng-model	     Binds the value of HTML controls to application data.	Directives
+ng-repeat	    Defines a template for each data in a collection.	Directives
+ng-show	        Shows or hides HTML elements.	HTML DOM
+
+
+AngularJS Filters
+
+currency	Format a number to a currency format.
+filter	    Select a subset of items from an array.
+lowercase	Format a string to lower case.
+orderBy	    Orders an array by an expression.
+uppercase	Format a string to upper case.
+
+
+AngularJS Events
+
+AngularJS support the following events:
+
+ng-click
+ng-dbl-click
+ng-mousedown
+ng-mouseenter
+ng-mouseleave
+ng-mousemove
+ng-keydown
+ng-keyup
+ng-keypress
+ng-change
+
+
+
+AngularJS Validation Properties
+
+$dirty
+$invalid
+$error
+
+
+AngularJS Global API
+
+Converting
+
+angular.lowercase()	Converts a string to lowercase
+angular.uppercase()	Converts a string to uppercase
+angular.copy()	Creates a deep copy of an object or an array
+angular.forEach()	Executes a function for each element in an object or array
+
+
+Comparing
+
+angular.isArray()	Returns true if the reference is an array
+angular.isDate()	Returns true if the reference is a date
+angular.isDefined()	Returns true if the reference is defined
+angular.isElement()	Returns true if the reference is a DOM element
+angular.isFunction()	Returns true if the reference is a function
+angular.isNumber()	Returns true if the reference is a number
+angular.isObject()	Returns true if the reference is an object
+angular.isString()	Returns true if the reference is a string
+angular.isUndefined()	Returns true if the reference is undefined
+angular.equals()	Returns true if two references are equal
+
+
+JSON
+
+angular.fromJSON()	Deserializes a JSON string
+angular.toJSON()	Serializes a JSON string
+
+Basic
+
+angular.bootstrap()	Starts AngularJS manually
+angular.element()	Wraps an HTML element as an jQuery element
+angular.module()	Creates, registers, or retrieves an AngularJS module
+
+***************************************
+AngularJS is a structural framework for dynamic web apps
+
+data binding and dependency injection
+
+
+The impedance mismatch between dynamic applications and static documents is often solved with:
+
+a library - a collection of functions which are useful when writing web apps. Your code is in charge and it calls into the library when it sees fit. E.g., jQuery.
+frameworks - a particular implementation of a web application, where your code fills in the details. The framework is in charge and it calls into your code when it needs something app specific. E.g., durandal, ember, etc.
+
+Data binding, as in {{}}.
+DOM control structures for repeating, showing and hiding DOM fragments.
+Support for forms and form validation.
+Attaching new behavior to DOM elements, such as DOM event handling.
+Grouping of HTML into reusable components.
+
+
+
+
+
+
+
+
+
+
+
+
+

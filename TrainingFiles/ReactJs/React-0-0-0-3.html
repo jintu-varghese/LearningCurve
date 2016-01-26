@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>React-State-1</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div id="app"></div>
+        
+    </body>
+    <script type="text/javascript" src="http://fb.me/react-0.11.1.js"></script>
+    <script type="text/javascript" src="http://fb.me/JSXTransformer-0.11.1.js"></script>
+    
+    
+    
+     <script type="text/jsx">
+        /**@jsx React.DOM*/
+        
+        var MessageBox = React.createClass({
+            getInitialState: function(){
+            return {
+               isVisible: true,
+               titleMessage: 'Hello, World',
+               subTitle: 'OK Bye'
+            };
+            },
+            render: function() {
+            var inlineStyles ={
+            display : this.state.isVisible ? 'block' : 'none'
+            };
+            return (
+            <div className="container jumbotron" style={inlineStyles}>
+            <h2>{this.state.titleMessage}</h2>
+            <SubMessage />
+            </div>
+            );
+            }
+        });
+        
+        var SubMessage= React.createClass({
+        getInitialState: function(){
+            return {
+               isVisible: true,
+               subTitle: 'Nice To See You'
+            }
+            },
+         render :function(){
+         var subMessageStyles ={
+            display : this.state.isVisible ? 'block' : 'none'
+            };
+         return (
+         <div style={subMessageStyles}>{this.state.subTitle}</div>
+         );
+         }
+        });
+        
+        
+        
+       var reactComponent= React.renderComponent(
+        <MessageBox />,
+        document.getElementById('app')
+        );
+        
+         
+        
+    </script>
+    
+    
+    
+</html>

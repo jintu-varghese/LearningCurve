@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Closures For Callbacks - Method Binding</title>
+    <script type="text/javascript">
+        // I am a class constructor.
+        function Girl( name ){
+            // Store the public properties.
+            this.name = name;
+            // I say hello.
+            var privName=name;
+            this.sayHello = function(){
+                console.log( "Hello, my Public name is " + this.name );
+                console.log( "Hello, my Private name is " + privName );
+            };
+        }
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+        // I create a function that statically binds the given
+        // method to the given instance.
+    function bind( instance, method ){
+            // Create the parent function.
+            var invocation = function(){
+                return(
+                    method.apply( instance, arguments )
+                );
+            };
+            // Return the invocation binding.
+            console.log('invocation returned');
+             console.log(invocation.toString());
+            return invocation ;
+        }
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+        // -------------------------------------------------- //
+        // Create a new girl instance.
+        var katie = new Girl( "Katie" );
+        console.log('direct call');
+        katie.sayHello();
+        // Now, create a timer that will ask katie to say hello after
+        // a short delay.
+        console.log('timeout call');
+        setTimeout(katie.sayHello,
+           // bind( katie, katie.sayHello ),
+            1000
+        );
+        
+        console.log('timeout bind call');
+        setTimeout(
+            bind( katie, katie.sayHello ),
+            1000
+        );
+        
+        console.log('timeout bind logic direct call');
+        setTimeout(katie.sayHello.apply(katie,null),
+            1000
+        );
+    </script>
+</head>
+<body>
+    <!-- Intentionally left blank. -->
+</body>
+</html>
